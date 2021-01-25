@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8">
+		<title>modelos en 3D y AR</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel=StyleSheet href="css/estilos.css"/>
+    </head>
+    <body>
+        <model-viewer class="n"
+            id="reveal" 
+            loading="eager" 
+            src="assets/scene.gltf"  
+            shadow-intensity="1" 
+            auto-rotate 
+            camera-controls
+            ar
+            ar-scale="fixed"
+            alt="element3D">
+
+           
+        </model-viewer> <div class="slider">
+                <div class="slides">
+                    <button class="slide selected" onclick="switchSrc(this,'model')" style="background: url(../img/i8.png;)"></button>
+                    <button class="slide selected" onclick="switchSrc(this,'LobsterTail')" style="background: url(../img/cscs.jpg;)"></button>
+                </div>
+            </div>
+     <style>
+            .slider {
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+            position: absolute;
+            bottom: 16px;
+        }
+
+        .slides {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .slide {
+            scroll-snap-align: start;
+            flex-shrink: 0;
+            width: 100px;
+            height: 100px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #fff;
+            margin-right: 10px;
+            border-radius: 10px;
+            border: none;
+            display: flex;
+        }
+
+        .slide.selected {
+            border: 2px solid #4285f4;
+        }
+
+        .slide:focus {
+            outline: none;
+        }
+
+        .slide:focus-visible {
+            outline: 1px solid #4285f4;
+        }
+
+    </style>
+        <script type="module">
+            const modelViewer = document.querySelector("model-viewer");
+
+            window.switchSrc = (element, name) => {
+                const base ="../assets/" + name;
+                modelViewer.src = base + '.gltf';
+                const slides = document.querySelectorAll(".slide");
+                slides.forEach((element) => {
+                    element.classList.remove("selected");
+                });
+                element.classList.add("selected");
+            };
+            document.querySelector(".slider").addEventListener('beforexrselect', (ev) => {
+            // Keep slider interactions from affecting the XR scene.
+            ev.preventDefault();
+        });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+    </body>
+</html>

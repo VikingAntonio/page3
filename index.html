@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>modelos en 3D y AR</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel=StyleSheet href="css/estilos.css"/>
+		<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-light navbar-expand-md">
+			<div class="container-fluid"><a class="navbar-brand" href="#">Brand</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+				<div class="collapse navbar-collapse" id="navcol-1">
+					<ul class="nav navbar-nav">
+						<li class="nav-item"><a class="nav-link active" href="#">First Item</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Second Item</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Third Item</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div data-ride="carousel" class="carousel slide" id="carousel-1">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="jumbotron">
+						<h1>Heading text</h1>
+						<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+						<p><a class="btn btn-primary" role="button">Learn more</a></p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div id="jumbo1" class="jumbotron">	
+						<h1>Heading text</h1>
+						<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+						<p><a class="btn btn-primary" role="button">Learn more</a></p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="jumbotron">
+						<h1>Heading text</h1>
+						<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+						<p><a class="btn btn-primary" role="button">Learn more</a></p>
+					</div>
+				</div>
+			</div>
+			<div><a href="#carousel-1" role="button" data-slide="prev" class="carousel-control-prev"><span aria-hidden="true" class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a href="#carousel-1" role="button" data-slide="next" class="carousel-control-next"><span aria-hidden="true" class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a></div>
+			<ol class="carousel-indicators">
+				<li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-1" data-slide-to="1"></li>
+				<li data-target="#carousel-1" data-slide-to="2"></li>
+			</ol>
+		</div>
+		<div class="imagen360">
+			<a-scene embedded id="imagen36">
+				<div class="elementos">
+					<h2><strong>titulo</strong></h2>
+					<p><strong>lorem lorem lorem lorem lrem lorem lorem</strong></p>
+					<button>soy un boton</button>
+				</div>
+				<a-assets>
+						<img id="sky" src="img/ejem360.jpg"></img>
+				</a-assets>
+				<a-sky src="#sky"
+				></a-sky>
+				
+			</a-scene>
+		</div>
+		<div class="tarje">
+			<div class="row">
+				<div class="col-sm-12 col-md-12 col-lg-4">
+					
+					<h1>heading</h1>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ullamcorper 
+						hendrerit nisi, at sodales tellus venenatis at. Nullam consequat magna
+					</p>
+					
+				</div>
+				<div class="col-sm-12 col-md-12 col-lg-4">
+					<h1>heading</h1>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ullamcorper 
+						hendrerit nisi, at sodales tellus venenatis at. Nullam consequat magna
+					</p>
+				</div>
+				<div class="col-sm-12 col-md-12 col-lg-4">
+					<h1>heading</h1>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ullamcorper 
+						hendrerit nisi, at sodales tellus venenatis at. Nullam consequat magna
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="contDes">
+			<a href="puertoedit.blend" class="btn-descarga" download="puertoedit.blend" title="descargar">descargar</a>
+		</div>
+		<div class="elemento3d">
+			<model-viewer 
+					id="reveal" 
+					loading="eager"  
+					src="assets/pollo3d.gltf"  	 
+					shadow-intensity="2" 
+					auto-rotate 
+					camera-controls
+					ar
+					ar-scale="fixed"
+					alt="element3D">
+					</model-viewer>
+		</div>
+		<div class="foods3d">
+			<div class="row">
+				<div class="col-sm-12 col-md-12 col-lg-4">				
+				</div>
+				<div class="col-sm-12 col-md-12 col-lg-4">
+					<h1>food1</h1>
+					<p>
+						$24.00<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ullamcorper hendrerit nisi, at sodales tellus venenatis at. Nullam consequat magna<br>
+						<button class="boton">OrderNow</button>
+					</p>
+				</div>
+				<div class="col-sm-12 col-md-12 col-lg-4">
+					<model-viewer 
+					id="reveal" 
+					loading="eager"  
+					src="assets/palabras2.gltf"  	 
+					shadow-intensity="5" 
+					auto-rotate 
+					camera-controls
+					ar
+					ar-scale="fixed"
+					alt="element3D">
+					</model-viewer>
+				</div>
+			</div>
+			<div class="row">
+					<div class="col-sm-12 col-md-12 col-lg-4">
+					
+				</div>
+				<div class="col-sm-12 order-sm-1 col-md-12 order-md-1 col-lg-4 order-lg-0 ">
+					<model-viewer 
+					id="reveal" 
+					loading="eager" 
+					src="assets/countryinncaffe3d.gltf"  
+					shadow-intensity="5" 
+					auto-rotate 
+					camera-controls
+					ar
+					ar-scale="fixed"
+					alt="element3D">
+					</model-viewer>
+				</div>
+				<div class="col-sm-12 order-sm-0 col-md-12 order-md-0 col-lg-4 order-lg-1">
+					<h1>food2</h1>
+					<p>
+						$30.25<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ullamcorper hendrerit nisi, at sodales tellus venenatis at. Nullam consequat magna<br>
+						<button class="boton">OrderNow</button>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 col-md-12 col-lg-4">
+				
+				</div>
+				<div class="col-sm-12 col-md-12 col-lg-4">
+					<h1>food3</h1>
+					<p>
+						$12.90<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ullamcorper hendrerit nisi, at sodales tellus venenatis at. Nullam consequat magna<br>
+						<button class="boton">OrderNow</button>
+					</p>
+				</div>
+				<div class="col-sm-12 col-md-12 col-lg-4">
+					<model-viewer 
+						id="reveal" 
+						loading="eager" 
+						src="assets/model.gltf"  
+						shadow-intensity="5" 
+						auto-rotate 
+						camera-controls
+						ar
+						ar-scale="fixed"
+						alt="element3D">
+					</model-viewer>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 col-md-12 col-lg-4">
+					
+				</div>
+				<div class="col-sm-12 order-sm-1 col-md-12 order-md-1 col-lg-4 order-lg-0">
+					<model-viewer 
+						id="reveal" 
+						loading="eager" 
+						src="assets/LobsterTail.gltf"  
+						shadow-intensity="5" 
+						auto-rotate 
+						camera-controls
+						ar
+						ar-scale="fixed"
+						alt="element3D">
+					</model-viewer>
+				</div>
+				<div class="col-sm-12 order-sm-0 col-md-12 order-md-0 col-lg-4 order-lg-1">
+					<h1>food4</h1>
+					<p>
+						$30.25<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ullamcorper hendrerit nisi, at sodales tellus venenatis at. Nullam consequat magna<br>
+						<button class="boton">OrderNow</button>
+					</p>
+				</div>
+			</div>
+		</div>
+		<!--<div class="modelo3d">
+				<model-viewer 
+					id="reveal" 
+					loading="eager" 
+					src="assets/LobsterTail.gltf"  
+					shadow-intensity="5" 
+					auto-rotate 
+					camera-controls
+					ar
+					ar-scale="fixed"
+					alt="element3D">
+			</model-viewer>
+		</div>-->
+		<div class="footer-dark">
+			<footer>
+				<div class="container">
+					<div class="row">
+						<!-- Start: Services -->
+						<div class="col-sm-6 col-md-3 item">
+							<h3>Services</h3>
+							<ul>
+								<li><a href="#">Web design</a></li>
+								<li><a href="#">Development</a></li>
+								<li><a href="#">Hosting</a></li>
+							</ul>
+						</div><!-- End: Services -->
+						<!-- Start: About -->
+						<div class="col-sm-6 col-md-3 item">
+							<h3>About</h3>
+							<ul>
+								<li><a href="#">Company</a></li>
+								<li><a href="#">Team</a></li>
+								<li><a href="#">Careers</a></li>
+							</ul>
+						</div><!-- End: About -->
+						<!-- Start: Footer Text -->
+						<div class="col-md-6 item text">
+							<h3>Company Name</h3>
+							<p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+						</div><!-- End: Footer Text -->
+						<!-- Start: Social Icons -->
+						<div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div><!-- End: Social Icons -->
+					</div><!-- Start: Copyright -->
+					<p class="copyright">Company Name © 2017</p><!-- End: Copyright -->
+				</div>
+			</footer>
+		</div><!-- End: Footer Dark -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
+		<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+		<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+
+	</body>
+</html>
